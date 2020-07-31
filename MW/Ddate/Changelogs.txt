@@ -1,8 +1,0 @@
-Advance Delivery Schedule - CHANGELOGS
-
-Legend
-+ New feature
-* fix bug
-
-v1.0.0 (July 30, 2018)
-+ Extension realeased
