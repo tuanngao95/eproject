@@ -1,0 +1,66 @@
+<?php
+/**
+ * Mage-World
+ *
+ * @category    Mage-World
+ * @package     MW
+ * @author      Mage-world Developer
+ *
+ * @copyright   Copyright (c) 2018 Mage-World (https://www.mage-world.com/)
+ */
+
+// @codingStandardsIgnoreFile
+
+/** @var \MW\Ddate\Block\Adminhtml\Sales\Order\View\Tab\Information $block */
+$delivery = $block->getDelivery();
+?>
+<?php if($this->getLastItem()) {?>
+    <?php echo "</table>"; ?>
+<?php if (count($delivery) > 0) :?>
+    <div class="entry-edit">
+        <div class="loading-mask" style="display: none;" data-role="loader">
+            <div class="popup popup-loading">
+                <div class="popup-inner">
+                    <img alt="Loading..." src="<?= $this->getLoadingPath(); ?>">
+                    Please wait...
+                </div>
+            </div>
+        </div>
+        <section class="admin__page-section order-delivery">
+            <div class="delivery admin__page-section-title">
+            <span class="icon-head head-account title">
+                <?php echo $block->escapeHtml(__('Delivery Information')) ?>
+            </span>
+            </div>
+            <div class="grid">
+                <div class="hor-scroll" data-bind="scope: 'mw-delivery-info'">
+                    <div id="delivery_date_form">
+                        <ul>
+                            <li class="delivery">
+                                <div class="delivery_time_date">
+                                    <label for="mw_delivery_date"><?php echo $block->escapeHtml(__('Date to delivery: ')) ?></label>
+                                    <span><?php echo $block->escapeHtml($delivery['mw_delivery_date']) ?></span>
+                                </div>
+                                <div class="delivery_time_date select-time">
+                                    <label for="mw_delivery_time"><?php echo $block->escapeHtml(__('Time to delivery: ')) ?></label>
+                                    <span><?php echo $block->escapeHtml($delivery['mw_delivery_time']) ?></span>
+                                </div>
+                            </li>
+
+                            <li class="mw_comment">
+                                <div class="input-box">
+                                    <label for="mw_comment"><?php echo $block->escapeHtml(__('Delivery Comment: ')) ?></label>
+                                    <p class="comment-delivery">
+                                        <textarea disabled rows="5" id="mw_delivery_comment" class="input-text admin__control-text" type="text" name="mw_delivery_comment"><?php echo $block->escapeHtml($delivery['mw_delivery_comment']) ?></textarea>
+                                    </p>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+<?php endif;?>
+<?php } ?>

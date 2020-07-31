@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!--
+  ~ Mage-World
+  ~
+  ~  @category    Mage-World
+  ~  @package     MW
+  ~  @author      Mage-world Developer
+  ~
+  ~  @copyright   Copyright (c) 2018 Mage-World (https://www.mage-world.com/)
+  -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="mw_ddate_schedule_listing_data_source" xsi:type="string">MW\Ddate\Model\ResourceModel\Ddate\Grid\Collection</item>
+                <item name="mw_ddate_schedule_notshipped_data_source" xsi:type="string">MW\Ddate\Model\ResourceModel\Ddate\Order\Grid\NotShippedCollection</item>
+                <item name="mw_ddate_schedule_shipped_data_source" xsi:type="string">MW\Ddate\Model\ResourceModel\Ddate\Order\Grid\ShippedCollection</item>
+                <item name="mw_ddate_schedule_cancel_data_source" xsi:type="string">MW\Ddate\Model\ResourceModel\Ddate\Order\Grid\CanceledCollection</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <preference for="Magento\Sales\Model\Order\Pdf\Invoice" type="MW\Ddate\Rewrite\Order\Pdf\Invoice" />
+    <preference for="Magento\Sales\Model\Order\Pdf\Shipment" type="MW\Ddate\Rewrite\Order\Pdf\Invoice" />
+</config>

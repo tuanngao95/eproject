@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!--
+  ~ Mage-World
+  ~
+  ~ @category    Mage-World
+  ~ @package     MW
+  ~ @author      Mage-world Developer
+  ~
+  ~ @copyright   Copyright (c) 2018 Mage-World (https://www.mage-world.com/)
+  -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Email:etc/email_templates.xsd">
+    <template id="ddate_sales_email_order_template" label="New Order include Delivery Information" file="order_new.html" type="html" module="MW_Ddate" area="frontend"/>
+    <template id="ddate_sales_email_order_guest_template" label="New Order for Guest include Delivery Information" file="order_new_guest.html" type="html" module="MW_Ddate" area="frontend"/>
+</config>

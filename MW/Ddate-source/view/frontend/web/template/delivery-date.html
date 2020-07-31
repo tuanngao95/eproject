@@ -1,0 +1,82 @@
+<!--
+  ~ /**
+  ~  Copyright © 2016 MW. All rights reserved.
+  ~  See COPYING.txt for license details.
+  ~  */
+  -->
+
+<!-- ko if: isShowDelivery() -->
+<div id="delivery_date_load">
+    <ul style="list-style: none; padding: 0px 5px;">
+        <li class="delivery">
+            <!--ko if: isDatetimePicker()-->
+            <div class="delivery_time_date">
+                <p style="padding-top: 5px; font-size: 14px; margin: 5px 0;" for="delivery_date" data-bind="i18n: 'Delivery Date'"></p>
+                <div class="datetime-delivery">
+                    <input readonly="readonly" id="delivery_date" style="width: 200px" class="osc-additional-data"
+                           type="text" size="17" name="delivery-date"
+                           data-bind="value: currentDate(), afterRender: initDate()"/>
+                </div>
+            </div>
+            <!-- ko if: listTime().length -->
+            <div class="delivery_time_date select-time">
+                <p style="padding-top: 5px; font-size: 14px; margin: 5px 0;" for="delivery_time" data-bind="i18n: 'Delivery Time'"></p>
+                <div class="datetime-delivery">
+                    <select id="mw_delivery_time" name="delivery_time" style="width: 200px"
+                            data-bind="event:{ change: selectTime}, selectedOptions: currentTime(), options: listTime(),
+                        optionsText: function(item) {
+                            return item.label
+                        },
+                        optionsValue: function(item) {
+                            return item.value
+                        },
+                        optionsCaption: $t('Choose...')">
+                    </select>
+                </div>
+            </div>
+            <!-- /ko -->
+            <!-- ko ifnot: listTime().length -->
+            <p style="color: red" data-bind="i18n: 'This day have been full slot time, please select orther day.'"></p>
+            <!--/ko-->
+            <!--/ko-->
+
+            <!--ko ifnot: isDatetimePicker()-->
+            <!-- ko foreach: getRegion('mw-delivery-calender-grid') -->
+            <!-- ko template: getTemplate() --><!-- /ko -->
+            <!--/ko-->
+            <!--/ko-->
+        </li>
+        <!--ko if: getDescription()-->
+        <div class="description-box" style="margin-top: 15px;">
+            <label data-bind="i18n: getDescription()"></label>
+        </div>
+        <!--/ko-->
+
+        <!-- ko if: isShowSecurityCode() -->
+        <li class="sercurity-box">
+            <div class="input-box">
+                <label for="security_code"
+                       data-bind="i18n: 'Security access code (Buildings/gated communities)'"></label>
+                <p class="security-code-delivery">
+                    <input id="security_code" class="osc-additional-data input-text"
+                           type="text" size="25" name="security_code" required/>
+                </p>
+            </div>
+        </li>
+        <!-- /ko -->
+
+        <!-- ko if: isEnableComment() -->
+        <li class="mw_comment">
+            <div class="input-box">
+                <label for="security_code"
+                       data-bind="i18n: 'Delivery Comment'"></label>
+                <p class="comment-delivery">
+                    <textarea data-bind="event:{ change: updateComment}, value: currentComment()" rows="5" id="mw_delivery_comment" class="input-text admin__control-text"
+                              type="text" name="mw_delivery_comment"/>
+                </p>
+            </div>
+        </li>
+        <!-- /ko -->
+    </ul>
+</div>
+<!-- /ko -->

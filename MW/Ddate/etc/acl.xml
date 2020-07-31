@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!--
+  ~ Mage-World
+  ~
+  ~  @category    Mage-World
+  ~  @package     MW
+  ~  @author      Mage-world Developer
+  ~
+  ~  @copyright   Copyright (c) 2018 Mage-World (https://www.mage-world.com/)
+  -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="MW_Ddate::mw_ddate_parent" title="Delivery Schedule" translate="title" sortOrder="10">
+                    <resource id="MW_Ddate::mw_ddate_items" title="Manage Delivery Schedule" translate="title" sortOrder="10" />
+                    <resource id="MW_Ddate::mw_ddate_dtime" title="Manage Delivery Times" translate="title" sortOrder="10" />
+                </resource>
+                <resource id="Magento_Backend::stores">
+                    <resource id="Magento_Backend::stores_settings">
+                        <resource id="Magento_Config::config">
+                            <resource id="MW_Ddate::mw_ddate_config" title="Advance Delivery Schedule Configuration" translate="title" sortOrder="90"/>
+                        </resource>
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>
