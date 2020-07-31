@@ -1,0 +1,112 @@
+<!--
+  ~ Mage-World
+  ~
+  ~ @category    Mage-World
+  ~ @package     MW
+  ~ @author      Mage-world Developer
+  ~
+  ~ @copyright   Copyright (c) 2018 Mage-World (https://www.mage-world.com/)
+  -->
+
+<div class="calender-grid">
+    <div class="deli_title">
+        <h6 style="margin-top: 0px">
+            <a id="slideshow-previous" style="display: none;" data-bind="i18n: 'Previous 7 days', event: {click: preSlide}"></a>
+            <a id="slideshow-next" style="display: inline;" data-bind="i18n: 'Next 7 days', event: {click: nextSlide}"></a>
+        </h6>
+    </div>
+    <div class="deli_date_time">
+        <div class="deli_time">
+            <h6 class="first_column_header">
+                <strong data-bind="i18n: getFirstColumnHeader()"></strong>
+            </h6>
+            <!--ko foreach: { data: listTime(), as: 'time' }-->
+                <p data-bind="text: time.dtime"></p>
+            <!--/ko-->
+        </div>
+        <div class="deli_date">
+            <div id="slideshow-area">
+                <div id="slideshow-scroller" scrollleft="0">
+                    <div id="slideshow-holder" style="width: 2000px;" data-bind="foreach: { data: listWeekday(), afterRender: currentSelect, as: 'weeks' }">
+                        <!--ko if: $calenderGrid = $parent-->
+                        <!--/ko-->
+                        <div class="slideshow-content" data-bind="afterRender: $parent.renderSlideContent()">
+                            <div class="deli_date_top">
+                                <ul data-bind="foreach: {data: weeks, as: 'day'}">
+                                    <!--ko if: $index() % 2 != 0-->
+                                    <li class="oddrow" data-bind="event: {click: $calenderGrid.mobileSelect}">
+                                        <strong data-bind="i18n: day.weekday"></strong>
+                                        <div class="option_slot_select">
+                                            <p class="ddate_day_selected" data-bind="i18n: 'Select'"></p>
+                                            <p class="ddate_day_option">
+                                                <!--ko foreach: { data: $calenderGrid.listTime(), as: 'time' }-->
+                                                <!--ko if: $calenderGrid.getAvaiable(time.dtime_id, day.date)-->
+                                                <a data-bind="text: time.dtime, event: {click: $calenderGrid.mobileSelectTime}, attr: {value: day.date, 'ddate': 'dd'+time.dtime_id+day.date}"></a>
+                                                <!--/ko-->
+                                                <!--ko ifnot: $calenderGrid.getAvaiable(time.dtime_id, day.date)-->
+                                                <a class="disablerow" data-bind="text: time.dtime"></a>
+                                                <!--/ko-->
+                                                <!--/ko-->
+                                            </p>
+                                        </div>
+                                        <span data-bind="text: day.dateLabel"></span>
+                                    </li>
+                                    <!--/ko-->
+                                    <!--ko if: $index() % 2 == 0-->
+                                    <li class="" data-bind="event: {click: $calenderGrid.mobileSelect}">
+                                        <strong data-bind="i18n: day.weekday"></strong>
+                                        <div class="option_slot_select">
+                                            <p class="ddate_day_selected" data-bind="i18n: 'Select'"></p>
+                                            <p class="ddate_day_option">
+                                                <!--ko foreach: { data: $calenderGrid.listTime(), as: 'time' }-->
+                                                <!--ko if: $calenderGrid.getAvaiable(time.dtime_id, day.date)-->
+                                                <a data-bind="text: time.dtime, event: {click: $calenderGrid.mobileSelectTime}, attr: {value: day.date, 'ddate': 'dd'+time.dtime_id+day.date}"></a>
+                                                <!--/ko-->
+                                                <!--ko ifnot: $calenderGrid.getAvaiable(time.dtime_id, day.date)-->
+                                                <a class="disablerow" data-bind="text: time.dtime"></a>
+                                                <!--/ko-->
+                                                <!--/ko-->
+                                            </p>
+                                        </div>
+                                        <span data-bind="text: day.dateLabel"></span>
+                                    </li>
+                                    <!--/ko-->
+                                </ul>
+                            </div>
+                            <div class="deli_date_top select_one">
+                                <!--ko if: $calenderGrid = $parent-->
+                                <!--/ko-->
+                                <!--ko foreach: { data: $parent.listTime(), as: 'time' }-->
+                                <ul>
+                                    <!--ko foreach: {data: weeks, as: 'day'}-->
+                                    <!--ko if: $calenderGrid.getAvaiable(time.dtime_id, day.date)-->
+                                    <!--ko if: $index() % 2 != 0-->
+                                    <li class="oddrow">
+                                        <a data-bind="i18n: 'Select', event: {click: $calenderGrid.selectTime}, attr: {value: time.dtime_id, 'ddate': 'dd'+time.dtime_id+day.date}" class=""></a>
+                                    </li>
+                                    <!--/ko-->
+                                    <!--ko if: $index() % 2 == 0-->
+                                    <li class="">
+                                        <a data-bind="i18n: 'Select', event: {click: $calenderGrid.selectTime}, attr: {value: time.dtime_id, 'ddate': 'dd'+time.dtime_id+day.date}" class=""></a>
+                                    </li>
+                                    <!--/ko-->
+                                    <!--/ko-->
+                                    <!--ko ifnot: $calenderGrid.getAvaiable(time.dtime_id, day.date)-->
+                                    <li class="disablerow">&nbsp;</li>
+                                    <!--/ko-->
+                                    <!--/ko-->
+                                    <div class="clear"><span></span></div>
+                                </ul>
+                                <!--/ko-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clear"><span></span></div>
+    </div>
+</div>
+<div style="margin-top:10px;" class="ddate_selected">
+    <img class="unavailableimg" data-bind="attr: {src: window.checkoutConfig.deliveryDateModule.ddateImgDateUrl}"> <strong data-bind="i18n: 'Date Selected: '"></strong> <span id="showddate:date"></span> <img class="unavailableimg" data-bind="attr: {src: window.checkoutConfig.deliveryDateModule.ddateImgTimeUrl}"> <span id="showddate:dtime"></span>
+</div>

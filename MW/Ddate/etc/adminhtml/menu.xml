@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+  ~ Mage-World
+  ~
+  ~  @category    Mage-World
+  ~  @package     MW
+  ~  @author      Mage-world Developer
+  ~
+  ~  @copyright   Copyright (c) 2018 Mage-World (https://www.mage-world.com/)
+  -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="MW_Ddate::mw_ddate_parent" title="Delivery Schedule" module="MW_Ddate" sortOrder="15" resource="MW_Ddate::ddate"/>
+        <add id="MW_Ddate::mw_ddate_items" title="Manage Delivery Schedule" module="MW_Ddate" sortOrder="10" parent="MW_Ddate::mw_ddate_parent" action="mw_ddate/ddate/" resource="MW_Ddate::ddate"/>
+        <add id="MW_Ddate::mw_ddate_dtime" title="Manage Delivery Times" module="MW_Ddate" sortOrder="10" parent="MW_Ddate::mw_ddate_parent" action="mw_ddate/dtime/" resource="MW_Ddate::ddate"/>
+        <add id="MW_Ddate::mw_ddate_config" title="Configuration" module="MW_Ddate" sortOrder="10" parent="MW_Ddate::mw_ddate_parent" dependsOnModule="MW_Ddate" action="adminhtml/system_config/edit/section/mw_ddate" resource="MW_Ddate::mw_ddate_config"/>
+    </menu>
+</config>

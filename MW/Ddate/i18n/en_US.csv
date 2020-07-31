@@ -1,0 +1,82 @@
+"Manage Delivery Times","Manage Delivery Times"
+"Add New","Add New"
+"All Store Views","All Store Views"
+"Manage Delivery Schedule","Manage Delivery Schedule"
+"Delivery Schedule","Delivery Schedule"
+"This time no longer exists.","This time no longer exists."
+"New Delivery Times","New Delivery Times"
+"Edit Delivery Times","Edit Delivery Times"
+"Delivery information invalid.","Delivery information invalid."
+"This Time have been full slot.","This Time have been full slot."
+"Datetime Picker","Datetime Picker"
+"You haven't selected delivery date. Please select again.","You haven't selected delivery date. Please select again."
+"You haven't selected delivery time.","You haven't selected delivery time."
+"Delivery time don't exist.","Delivery time don't exist."
+"This time have been full slot.","This time have been full slot."
+"Delivery Date:","Delivery Date:"
+"Delivery Time:","Delivery Time:"
+"Delivery Information","Delivery Information"
+"Date to delivery: ","Date to delivery: "
+"Time to delivery: ","Time to delivery: "
+"Delivery Comment: ","Delivery Comment: "
+"Date to delivery","Date to delivery"
+"Time to delivery","Time to delivery"
+"Delivery Comment","Delivery Comment"
+"Delivery Date Information","Delivery Date Information"
+"Delivery Date: ","Delivery Date: "
+"Delivery Time: ","Delivery Time: "
+"Date to delivery:","Date to delivery:"
+"Time to delivery:","Time to delivery:"
+"Billing Info","Billing Info"
+"Shipping Info","Shipping Info"
+"Payment Method","Payment Method"
+"Shipping Method","Shipping Method"
+"Once your package ships we will send an email with a link to track your order.","Once your package ships we will send an email with a link to track your order."
+"Delivery Date","Delivery Date"
+"Delivery Time","Delivery Time"
+"This day have been full slot time, please select orther day.","This day have been full slot time, please select orther day."
+"Previous 7 days","Previous 7 days"
+"Next 7 days","Next 7 days"
+Select,Select
+"Date Selected: ","Date Selected: "
+"Advance Delivery Schedule Configuration","Advance Delivery Schedule Configuration"
+"Mage World","Mage World"
+"Advance Delivery Schedule","Advance Delivery Schedule"
+General,General
+"Enable Module","Enable Module"
+"Format Date","Format Date"
+Weeks,Weeks
+"Default max deliveries per slot","Default max deliveries per slot"
+"Return Delivery Slot When Order Shipped","Return Delivery Slot When Order Shipped"
+"Return Delivery Slot When Order Canceled","Return Delivery Slot When Order Canceled"
+"Delay (hour)","Delay (hour)"
+"First Column Header","First Column Header"
+"Deliver Saturdays","Deliver Saturdays"
+"Deliver Sundays","Deliver Sundays"
+"List Special Day(not delivery)","List Special Day(not delivery)"
+"Calender Display","Calender Display"
+"Enable Comment","Enable Comment"
+Description,Description
+ID,ID
+"Delivery slot Time","Delivery slot Time"
+"Slot time sorting","Slot time sorting"
+Status,Status
+Active,Active
+Inactive,Inactive
+Store,Store
+Action,Action
+Edit,Edit
+"Delivery Time Information","Delivery Time Information"
+"Store View","Store View"
+"Is Active","Is Active"
+"Delivery Days","Delivery Days"
+Monday,Monday
+Tuesday,Tuesday
+Wednesday,Wednesday
+Thursday,Thursday
+Friday,Friday
+Saturday,Saturday
+Sunday,Sunday
+"Special days","Special days"
+Ordered,Ordered
+"Delivery Schedule Detail","Delivery Schedule Detail"

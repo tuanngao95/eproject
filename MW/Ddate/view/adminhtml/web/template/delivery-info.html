@@ -1,0 +1,75 @@
+<!--
+  ~ Mage-World
+  ~
+  ~ @category    Mage-World
+  ~ @package     MW
+  ~ @author      Mage-world Developer
+  ~
+  ~ @copyright   Copyright (c) 2018 Mage-World (https://www.mage-world.com/)
+  -->
+
+<div id="delivery_date_form">
+    <ul>
+        <li class="delivery">
+            <div class="delivery_time_date">
+                <label for="mw_delivery_date" data-bind="i18n: 'Date to delivery:'"></label>
+                <!--ko if: currentDateText()-->
+                <span data-bind="text: currentDateText()"></span>
+                <!--/ko-->
+                <p class="datetime-delivery">
+                    <input readonly="readonly" id="mw_delivery_date" class="admin__control-text"
+                           type="text" size="17" name="delivery-date"
+                           data-bind="disable: isDisable(), value: currentDate(), afterRender: initDate()"/>
+                </p>
+            </div>
+            <div class="delivery_time_date select-time">
+                <label for="mw_delivery_time" data-bind="i18n: 'Time to delivery:'"></label>
+                <!--ko if: currentTimeText()-->
+                <span data-bind="text: currentTimeText()"></span>
+                <!--/ko-->
+                <!-- ko if: listTime().length -->
+                <p class="datetime-delivery">
+                    <select class="select admin__control-select" id="mw_delivery_time" name="delivery_time" style="width: 200px"
+                            data-bind="disable: isDisable(), selectedOptions: currentTime(), options: listTime(),
+                        optionsText: function(item) {
+                            return item.label
+                        },
+                        optionsValue: function(item) {
+                            return item.value
+                        }">
+                    </select>
+                </p>
+                <!-- /ko -->
+            </div>
+        </li>
+        <!-- ko if: isShowSecurityCode() -->
+        <li class="mw_sercurity-box">
+            <div class="input-box">
+                <label for="security_code"
+                       data-bind="i18n: 'Security access code (Buildings/gated communities)'"></label>
+                <p class="security-code-delivery">
+                    <input id="security_code" class="osc-additional-data input-text"
+                           type="text" size="25" name="security_code" required/>
+                </p>
+            </div>
+        </li>
+        <!-- /ko -->
+
+        <!-- ko if: isEnableComment() -->
+        <li class="mw_comment">
+            <div class="input-box">
+                <label for="security_code"
+                       data-bind="i18n: 'Delivery Comment: '"></label>
+                <p class="comment-delivery">
+                    <textarea data-bind="disable: isDisable(), value: currentComment()" rows="5" id="mw_delivery_comment" class="input-text admin__control-text"
+                           type="text" name="mw_delivery_comment"/>
+                </p>
+            </div>
+        </li>
+        <!-- /ko -->
+
+        <!--ko if: canShip()-->
+        <button type="button" class="primary save" data-bind="i18n: 'Update', event: {click: saveDelivery}"></button>
+        <!--/ko-->
+    </ul>
+</div>

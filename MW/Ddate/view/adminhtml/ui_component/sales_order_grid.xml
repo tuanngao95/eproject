@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Mage-World
+  ~
+  ~ @category    Mage-World
+  ~ @package     MW
+  ~ @author      Mage-world Developer
+  ~
+  ~ @copyright   Copyright (c) 2018 Mage-World (https://www.mage-world.com/)
+  -->
+
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <listingToolbar name="listing_top">
+    </listingToolbar>
+    <columns name="sales_order_columns">
+        <column name="mw_delivery_date" class="MW\Ddate\Ui\Component\Sales\Order\Listing\Column\Ddate">
+            <!--<settings>-->
+                <!--<filter>false</filter>-->
+                <!--<sortable>false</sortable>-->
+                <!--<label translate="true">Delivery Date</label>-->
+            <!--</settings>-->
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="filterable" xsi:type="boolean">false</item>
+                    <item name="sortable" xsi:type="boolean">false</item>
+                    <item name="label" xsi:type="string" translate="true">Delivery Date</item>
+                </item>
+            </argument>
+        </column>
+        <column name="mw_delivery_time" class="MW\Ddate\Ui\Component\Sales\Order\Listing\Column\Dtime">
+            <!--<settings>-->
+                <!--<filter>false</filter>-->
+                <!--<sortable>false</sortable>-->
+                <!--<label translate="true">Delivery Time</label>-->
+            <!--</settings>-->
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="filterable" xsi:type="boolean">false</item>
+                    <item name="sortable" xsi:type="boolean">false</item>
+                    <item name="label" xsi:type="string" translate="true">Delivery Time</item>
+                </item>
+            </argument>
+        </column>
+    </columns>
+</listing>

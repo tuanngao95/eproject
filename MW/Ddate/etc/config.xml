@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!--
+  ~ Mage-World
+  ~
+  ~  @category    Mage-World
+  ~  @package     MW
+  ~  @author      Mage-world Developer
+  ~
+  ~  @copyright   Copyright (c) 2018 Mage-World (https://www.mage-world.com/)
+  -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <mw_ddate>
+            <group_general>
+                <active>1</active>
+                <calender_display>0</calender_display>
+                <formatdate>Ymd</formatdate>
+                <weeks>4</weeks>
+                <maximum_bookings>10</maximum_bookings>
+                <first_column_header>Delivery Windows are Morning or Evening:</first_column_header>
+                <disable_base_firststlot>0</disable_base_firststlot>
+                <deliver_sundays>1</deliver_sundays>
+                <deliver_saturdays>1</deliver_saturdays>
+                <comment>1</comment>
+                <description>Your Description!</description>
+                <delay>0</delay>
+            </group_general>
+        </mw_ddate>
+        <sales_email>
+            <order>
+                <template>ddate_sales_email_order_template</template>
+                <guest_template>ddate_sales_email_order_guest_template</guest_template>
+            </order>
+        </sales_email>
+    </default>
+</config>
